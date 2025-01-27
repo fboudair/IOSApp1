@@ -1,0 +1,34 @@
+import SwiftUI
+struct NewView : View {
+var coffeeOrder: CoffeeOrder
+var body: some View {
+VStack {
+Text ("Thank for Ordering, See you next time")
+.font (.largeTitle)
+.fontWeight (.bold)
+.padding ()
+Text ("Here The Summary Of Your Order:")
+.font (.headline)
+.padding ()
+VStack (alignment: .leading) {
+Text ("Name: \(coffeeOrder.name)")
+Text ("Drink: \(coffeeOrder.drinkType) \(coffeeOrder.drinkSize)")
+Text ("Customization: \(coffeeOrder.customizations.isEmpty ? "None": coffeeOrder.customizations.joined(separator: ", "))" )
+Text ("Note: \(coffeeOrder.note)")
+}
+.padding()
+NavigationLink(destination: OrderCreationView()) {
+Text ("Order Again")
+.font(.headline)
+.padding()
+.frame(maxWidth: .infinity)
+.background (Color.brown)
+.foregroundColor (.white)
+.cornerRadius (10)
+}
+.padding ()
+}
+.navigationTitle ("order confirmation")
+.padding()
+}
+}
