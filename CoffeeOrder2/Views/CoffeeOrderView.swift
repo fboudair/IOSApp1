@@ -215,11 +215,11 @@ struct CoffeeOrderView: View {
 
         context.insert(newOrder)
 
-        name = ""
+        //name = ""
         showConfirmation = true
-        specialRequest = ""
+        //specialRequest = ""
 
-        addOns = []
+        //addOns = []
 
     }
 
